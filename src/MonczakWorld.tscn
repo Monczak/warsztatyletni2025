@@ -1,23 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgfwluobpa270"]
+[gd_scene load_steps=2 format=3 uid="uid://cg3wme6btdskh"]
 
-[ext_resource type="Script" path="res://src/World.gd" id="1_o615b"]
-[ext_resource type="Script" path="res://src/camera/Camera.gd" id="1_wy3ku"]
-[ext_resource type="PackedScene" uid="uid://du36k4g5svai3" path="res://src/Level.tscn" id="2_mxr40"]
-[ext_resource type="PackedScene" uid="uid://cc54w6n5ncad1" path="res://src/objects/Player.tscn" id="3_tg4fb"]
-[ext_resource type="PackedScene" uid="uid://qny4rb3ykp28" path="res://src/objects/Goo.tscn" id="4_ygcae"]
+[ext_resource type="PackedScene" uid="uid://b307l3jmiw4cv" path="res://src/World.tscn" id="1_rodkb"]
 
-[node name="World" type="Node2D"]
-script = ExtResource("1_o615b")
-player_tscn = ExtResource("3_tg4fb")
+[node name="World" instance=ExtResource("1_rodkb")]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("1_wy3ku")
-acceleration = 5
+[node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
-
-[node name="Level" parent="." instance=ExtResource("2_mxr40")]
-
-[node name="Player" parent="." instance=ExtResource("3_tg4fb")]
-
-[node name="Goo" parent="." instance=ExtResource("4_ygcae")]
-position = Vector2(623, 214)

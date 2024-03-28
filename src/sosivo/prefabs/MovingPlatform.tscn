@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4xunxy4vkl0s"]
+
+[ext_resource type="Script" path="res://src/sosivo/scripts/MovingObject.gd" id="1_mfvqv"]
+[ext_resource type="Texture2D" uid="uid://dvmt5ta6e00vf" path="res://images/white.png" id="2_i4ph8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlgry"]
+size = Vector2(200, 50)
+
+[node name="MovingPlatform" type="RigidBody2D" node_paths=PackedStringArray("_rb")]
+position = Vector2(243, -49)
+mass = 400.0
+gravity_scale = 0.0
+script = ExtResource("1_mfvqv")
+_moveSpeed = 100.0
+_acceleration = 100.0
+_rb = NodePath(".")
+DestinationDelta = Vector2(3000, -3000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qlgry")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.685266, 0.27289, 0.304541, 1)
+scale = Vector2(100, 25)
+texture = ExtResource("2_i4ph8")
