@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://du36k4g5svai3"]
+
+[ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="1_3lw1l"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(3, 216)
+scale = Vector2(8.12, 1)
