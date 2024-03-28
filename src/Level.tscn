@@ -10,4 +10,5 @@ position = Vector2(3, 216)
 scale = Vector2(8.12, 1)
 
 [node name="Box" parent="." instance=ExtResource("2_lc76d")]
-position = Vector2(-281, 123)
+position = Vector2(-281, -429)
+can_sleep = true

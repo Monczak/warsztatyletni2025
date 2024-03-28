@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bibiyup302myg"]
 
-[ext_resource type="PackedScene" uid="uid://cabehqx7ncyy" path="res://src/objects/Grabbable.tscn" id="1_e3ocd"]
+[ext_resource type="PackedScene" uid="uid://cabehqx7ncyy" path="res://src/objects/PlayerInteractable.tscn" id="1_e3ocd"]
 [ext_resource type="Texture2D" uid="uid://cabwwfn2u5qlb" path="res://icon.svg" id="2_hfy23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ec2v"]
 size = Vector2(36, 36)
 
 [node name="Box" instance=ExtResource("1_e3ocd")]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 scale = Vector2(0.28125, 0.28125)

@@ -7,6 +7,12 @@ extends CharacterBody2D
 @export var jump_gravity_multiplier := 0.6
 @export var fall_gravity_multiplier := 2.2
 
+@onready var grab_point: Node2D = $GrabPoint
+@onready var interaction_area: Area2D = $InteractionArea
+
+var _player_interactables := []
+var _grabbed_interactable: PlayerInteractable = null
+
 
 func _calculate_gravity() -> Vector2:
     var gravity := get_gravity()
@@ -18,6 +24,44 @@ func _calculate_gravity() -> Vector2:
         gravity *= fall_gravity_multiplier
     
     return gravity
+
+
+func _on_body_entered_interaction_area(body: Node2D) -> void:
+    _player_interactables.append(body)
+
+
+func _on_body_exited_interaction_area(body: Node2D) -> void:
+    _player_interactables.erase(body)
+
+
+func _interact() -> void:
+    if _grabbed_interactable != null:
+        _grabbed_interactable.unfix_position()
+        _grabbed_interactable = null
+    else:
+        if len(_player_interactables) == 0:
+            return
+
+        var nearest_interactable: PlayerInteractable = _player_interactables[0]
+        for interactable in _player_interactables:
+            var distance: float = (interactable.position - position).length()
+            if distance < (nearest_interactable.position - position).length():
+                nearest_interactable = interactable
+        
+        _grabbed_interactable = nearest_interactable
+    
+
+func _ready() -> void:
+    interaction_area.body_entered.connect(_on_body_entered_interaction_area)
+    interaction_area.body_exited.connect(_on_body_exited_interaction_area)
+
+
+func _process(delta: float) -> void:
+    if Input.is_action_just_pressed("Interact"):
+        _interact()
+
+    if _grabbed_interactable != null:
+        _grabbed_interactable.fix_position(grab_point.global_position, velocity)
 
 
 func _physics_process(delta: float) -> void:
