@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgfwluobpa270"]
+
+[ext_resource type="Script" path="res://src/camera/Camera.gd" id="1_wy3ku"]
+[ext_resource type="PackedScene" uid="uid://du36k4g5svai3" path="res://src/Level.tscn" id="2_mxr40"]
+[ext_resource type="PackedScene" uid="uid://cc54w6n5ncad1" path="res://src/objects/Player.tscn" id="3_tg4fb"]
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_wy3ku")
+acceleration = 5
+target = NodePath("../Player")
+
+[node name="Level" parent="." instance=ExtResource("2_mxr40")]
+
+[node name="Player" parent="." instance=ExtResource("3_tg4fb")]
