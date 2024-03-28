@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var max_speed := 600.0
 @export var jump_velocity := -600.0
@@ -82,3 +83,8 @@ func _physics_process(delta: float) -> void:
         velocity.x = move_toward(velocity.x, 0, acceleration * delta)
 
     move_and_slide()
+
+
+func _on_death() -> void:
+    print("I am dead")
+    Game.handle_player_death()
