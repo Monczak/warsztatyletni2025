@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://du36k4g5svai3"]
 
 [ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="1_3lw1l"]
-[ext_resource type="PackedScene" uid="uid://bibiyup302myg" path="res://src/objects/Box.tscn" id="2_lc76d"]
+[ext_resource type="PackedScene" uid="uid://j0lb6kqeeuos" path="res://src/objects/Box.tscn" id="2_lc76d"]
 
 [node name="Level" type="Node2D"]
 
@@ -10,5 +10,4 @@ position = Vector2(3, 216)
 scale = Vector2(8.12, 1)
 
 [node name="Box" parent="." instance=ExtResource("2_lc76d")]
-position = Vector2(-281, -429)
-can_sleep = true
+position = Vector2(-221, -69)

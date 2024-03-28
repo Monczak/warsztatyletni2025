@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var interaction_area: Area2D = $InteractionArea
 
 var _player_interactables := []
-var _grabbed_interactable: PlayerInteractable = null
+var _grabbed_interactable = null
 
 
 func _calculate_gravity() -> Vector2:
@@ -27,28 +27,32 @@ func _calculate_gravity() -> Vector2:
 
 
 func _on_body_entered_interaction_area(body: Node2D) -> void:
-    _player_interactables.append(body)
+    if body is PlayerInteractable:
+        _player_interactables.append(body)
 
 
 func _on_body_exited_interaction_area(body: Node2D) -> void:
-    _player_interactables.erase(body)
+    if body is PlayerInteractable:
+        _player_interactables.erase(body)
 
 
 func _interact() -> void:
     if _grabbed_interactable != null:
         _grabbed_interactable.unfix_position()
+        _grabbed_interactable.off_interaction()
         _grabbed_interactable = null
     else:
         if len(_player_interactables) == 0:
             return
 
-        var nearest_interactable: PlayerInteractable = _player_interactables[0]
+        var nearest_interactable = _player_interactables[0]
         for interactable in _player_interactables:
             var distance: float = (interactable.position - position).length()
             if distance < (nearest_interactable.position - position).length():
                 nearest_interactable = interactable
         
         _grabbed_interactable = nearest_interactable
+        _grabbed_interactable.on_interaction()
     
 
 func _ready() -> void:
