@@ -6,3 +6,6 @@
 
 [node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
+
+[node name="Player" parent="." index="2"]
+jump_velocity = -600.0

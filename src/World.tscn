@@ -17,3 +17,4 @@ target = NodePath("../Player")
 [node name="Level" parent="." instance=ExtResource("1_kbm2b")]
 
 [node name="Player" parent="." instance=ExtResource("2_2o6v2")]
+position = Vector2(157, -59)

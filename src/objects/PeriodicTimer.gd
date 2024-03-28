@@ -53,11 +53,9 @@ func _handle_connection(connection: TimerConnection) -> void:
             if _connection_states.get_or_add(interactable) == null or not _connection_states[interactable]:
                 _connection_states[interactable] = true
                 interactable.OnInteraction()
-                print("ON")
             else:
                 _connection_states[interactable] = false
                 interactable.OffInteraction()
-                print("OFF")
     
     _connection_handled[connection] = true
 

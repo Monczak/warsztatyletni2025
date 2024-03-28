@@ -15,11 +15,11 @@ interactable = NodePath("../MovingPlatform")
 mode = 2
 phase_shift = 0.0
 
-[sub_resource type="Resource" id="Resource_ku2j8"]
+[sub_resource type="Resource" id="Resource_i53hl"]
 script = ExtResource("8_sslmq")
 interactable = NodePath("../MovingPlatform")
 mode = 2
-phase_shift = 0.29
+phase_shift = 0.353
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_m0kto")
@@ -44,4 +44,4 @@ _originFlag = false
 
 [node name="PeriodicTimer" parent="." instance=ExtResource("7_8ss7w")]
 position = Vector2(-115, 41)
-connections = Array[ExtResource("8_sslmq")]([SubResource("Resource_wuw5a"), SubResource("Resource_ku2j8")])
+connections = Array[ExtResource("8_sslmq")]([SubResource("Resource_wuw5a"), SubResource("Resource_i53hl")])
