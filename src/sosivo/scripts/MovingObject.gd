@@ -12,38 +12,34 @@ var _destination : Vector2
 
 func OnInteraction() -> void:
     _originFlag = false
-    pass
+    
 func OffInteraction() -> void:
     _originFlag = true
-    pass
+    
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    _origin = position;
-    _destination = position + DestinationDelta;
-    pass # Replace with function body.
+    _origin = position
+    _destination = position + DestinationDelta
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 var velocity : Vector2 = Vector2.ZERO
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta : float) -> void:
-    const closeToZero : float = 0.05
+    const closeToZero : float = 1
     var desiredRelocation : Vector2 = Vector2.ZERO
 
-    if (_originFlag):
-        desiredRelocation = (_origin - position)
+    if _originFlag:
+        desiredRelocation = _origin - position
     else:
-        desiredRelocation = (_destination - position)
+        desiredRelocation = _destination - position
 
-    if (desiredRelocation.length() > closeToZero):
+    if desiredRelocation.length() > closeToZero:
         velocity = lerp(_rb.linear_velocity, desiredRelocation.normalized() * _moveSpeed,_acceleration * delta)
     else:
         velocity = lerp(_rb.linear_velocity, desiredRelocation, _acceleration * delta)
         #transform.position = (Vector2)transform.position + desiredRelocation;
-    pass
     
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
     _rb.linear_velocity = velocity
-        #transform.position = (Vector2)transform.position + desiredRelocation;
-    pass
+    #transform.position = (Vector2)transform.position + desiredRelocation;

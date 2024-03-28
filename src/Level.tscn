@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://du36k4g5svai3"]
+[gd_scene load_steps=11 format=3 uid="uid://du36k4g5svai3"]
 
 [ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="1_3lw1l"]
 [ext_resource type="Script" path="res://src/Level.gd" id="1_m0kto"]
@@ -6,6 +6,20 @@
 [ext_resource type="Script" path="res://src/PlayerRespawnPoint.gd" id="4_7pvq8"]
 [ext_resource type="PackedScene" uid="uid://qny4rb3ykp28" path="res://src/objects/Goo.tscn" id="5_t53vl"]
 [ext_resource type="PackedScene" uid="uid://b4xunxy4vkl0s" path="res://src/sosivo/prefabs/MovingPlatform.tscn" id="6_3ui4n"]
+[ext_resource type="PackedScene" uid="uid://ccmq77qe4la" path="res://src/objects/PeriodicTimer.tscn" id="7_8ss7w"]
+[ext_resource type="Script" path="res://src/resources/TimerConnection.gd" id="8_sslmq"]
+
+[sub_resource type="Resource" id="Resource_wuw5a"]
+script = ExtResource("8_sslmq")
+interactable = NodePath("../MovingPlatform")
+mode = 2
+phase_shift = 0.0
+
+[sub_resource type="Resource" id="Resource_ku2j8"]
+script = ExtResource("8_sslmq")
+interactable = NodePath("../MovingPlatform")
+mode = 2
+phase_shift = 0.29
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_m0kto")
@@ -24,6 +38,10 @@ script = ExtResource("4_7pvq8")
 position = Vector2(623, 214)
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("_rb") instance=ExtResource("6_3ui4n")]
-position = Vector2(275, -31)
+position = Vector2(179, 99)
 _rb = NodePath(".")
 _originFlag = false
+
+[node name="PeriodicTimer" parent="." instance=ExtResource("7_8ss7w")]
+position = Vector2(-115, 41)
+connections = Array[ExtResource("8_sslmq")]([SubResource("Resource_wuw5a"), SubResource("Resource_ku2j8")])
