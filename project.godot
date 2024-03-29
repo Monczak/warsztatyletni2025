@@ -24,6 +24,10 @@ Game="*res://src/singletons/Game.gd"
 naming/scene_name_casing=1
 naming/script_name_casing=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/moving_objects_preditctor/plugin.cfg")
+
 [input]
 
 MoveLeft={
