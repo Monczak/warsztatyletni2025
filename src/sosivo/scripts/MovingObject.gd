@@ -1,6 +1,8 @@
 extends ObjectInteractable
+class_name MovingObject
 
 @export var move_speed : float = 100
+
 var _origin : Vector2
 var _destination : Vector2
 @export var DestinationDelta : Vector2
