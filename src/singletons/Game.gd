@@ -7,11 +7,10 @@ signal start
 
 
 @onready var _root: Root = get_tree().root.get_node("Root")
-@onready var _world: World = _root.get_node("World")
 
 
 func get_world() -> World:
-    return _world
+    return _root.get_node("World")
 
 
 func get_camera() -> Camera:
