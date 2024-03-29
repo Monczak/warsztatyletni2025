@@ -1,10 +1,6 @@
 extends ObjectInteractable
 
-
-#@export var rb : RigidBody2D
-@export var _moveSpeed : float = 1
-@export var _acceleration : float = 10
-@export var _rb : AnimatableBody2D
+@export var move_speed : float = 10
 var _origin : Vector2
 var _destination : Vector2
 @export var DestinationDelta : Vector2
@@ -41,7 +37,9 @@ func _physics_process(delta : float) -> void:
         #transform.position = (Vector2)transform.position + desiredRelocation;
         
     var target := _origin if _originFlag else _destination
-    position = lerp(position, target, _acceleration * delta)
+    var move_dir = abs((target - position).normalized())
+    position.x = move_toward(position.x, target.x, move_dir.x * move_speed * delta)
+    position.y = move_toward(position.y, target.y, move_dir.y * move_speed * delta)
         
     
     
