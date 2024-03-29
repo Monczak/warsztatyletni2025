@@ -10,8 +10,7 @@ target = NodePath("../Player")
 [node name="Goo" parent="Level" index="3"]
 position = Vector2(642, 217)
 
-[node name="MovingPlatform" parent="Level" index="4" node_paths=PackedStringArray("_rb")]
+[node name="MovingPlatform" parent="Level" index="4"]
 position = Vector2(306, 68)
-_rb = NodePath(".")
 
 [editable path="Level"]
