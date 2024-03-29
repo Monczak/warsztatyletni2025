@@ -1,5 +1,5 @@
 extends Resource
-class_name KeyInteraction
+class_name Interaction
 
 enum InteractionMode { SetOn, SetOff }
 

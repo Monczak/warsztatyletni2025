@@ -1,7 +1,7 @@
 extends PlayerInteractable
 
 
-@export var interactions: Array[KeyInteraction]
+@export var interactions: Array[Interaction]
 
 
 func _ready() -> void:
@@ -16,9 +16,9 @@ func _on_body_entered(body: Node2D) -> void:
         var interactable_obj: ObjectInteractable = get_node(interaction.interactable)
         if body == interactable_obj:
             match interaction.mode:
-                KeyInteraction.InteractionMode.SetOn:
+                Interaction.InteractionMode.SetOn:
                     interactable_obj.OnInteraction()
-                KeyInteraction.InteractionMode.SetOff:
+                Interaction.InteractionMode.SetOff:
                     interactable_obj.OffInteraction()
             return
     
