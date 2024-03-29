@@ -14,6 +14,9 @@ class_name Player
 var _player_interactables := []
 var _grabbed_interactable = null
 
+var _impulse_velocity: Vector2
+var _apply_impulse_velocity := false
+
 
 func _calculate_gravity() -> Vector2:
     var gravity := get_gravity()
@@ -75,6 +78,10 @@ func _physics_process(delta: float) -> void:
 
     if Input.is_action_just_pressed("Jump") and is_on_floor():
         velocity.y = jump_velocity
+    
+    if _apply_impulse_velocity:
+        velocity = _impulse_velocity
+        _apply_impulse_velocity = false
 
     var direction := Input.get_axis("MoveLeft", "MoveRight")
     if direction:
@@ -84,6 +91,11 @@ func _physics_process(delta: float) -> void:
 
     move_and_slide()
 
+
+func apply_impulse_velocity(vel: Vector2) -> void:
+    _apply_impulse_velocity = true
+    _impulse_velocity = vel
+    
 
 func _on_death() -> void:
     print("I am dead")

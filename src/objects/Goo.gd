@@ -9,5 +9,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D):
-    body.call("_on_death")
+    if body.has_method("_on_death"):
+        body.call("_on_death")
     body.queue_free()
