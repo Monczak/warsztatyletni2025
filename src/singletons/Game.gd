@@ -1,7 +1,12 @@
 extends Node
 
 
-@onready var _root = get_tree().root.get_node("Root")
+signal victory
+signal reset
+signal start
+
+
+@onready var _root: Root = get_tree().root.get_node("Root")
 @onready var _world: World = _root.get_node("World")
 
 
@@ -29,4 +34,17 @@ func handle_player_death() -> void:
     get_camera().target = player
 
 
+func handle_victory() -> void:
+    victory.emit()
+    print("Level complete!")
+
+
+func reset_game() -> void:
+    reset.emit()
+    _root.load_world()
+    start.emit()
+    
+    
+func _ready() -> void:
+    reset_game()
 

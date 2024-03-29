@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvma0bsrliwvo"]
+
+[ext_resource type="PackedScene" uid="uid://cvvdubdlwy54" path="res://src/ui/VictoryScreen.tscn" id="1_1sssx"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="VictoryScreen" parent="." instance=ExtResource("1_1sssx")]

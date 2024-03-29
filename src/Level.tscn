@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://du36k4g5svai3"]
+[gd_scene load_steps=16 format=3 uid="uid://du36k4g5svai3"]
 
 [ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="1_3lw1l"]
 [ext_resource type="Script" path="res://src/Level.gd" id="1_m0kto"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://src/resources/Interaction.gd" id="11_881yx"]
 [ext_resource type="PackedScene" uid="uid://yh50ob3gsxfb" path="res://src/objects/Button.tscn" id="12_ieepj"]
 [ext_resource type="PackedScene" uid="uid://b55tg1lipk3m5" path="res://src/objects/JumpPad.tscn" id="12_lpfcl"]
+[ext_resource type="PackedScene" uid="uid://4o6evssusvq0" path="res://src/objects/Exit.tscn" id="13_e45qv"]
 
 [sub_resource type="Resource" id="Resource_gjcj3"]
 script = ExtResource("11_881yx")
@@ -27,8 +28,8 @@ mode = 0
 script = ExtResource("1_m0kto")
 
 [node name="Platform" parent="." instance=ExtResource("1_3lw1l")]
-position = Vector2(3, 216)
-scale = Vector2(8.12, 1)
+position = Vector2(-172, 219)
+scale = Vector2(10.52, 1)
 
 [node name="Box" parent="." instance=ExtResource("2_lc76d")]
 position = Vector2(-323, 120)
@@ -60,3 +61,6 @@ interactions = Array[ExtResource("11_881yx")]([SubResource("Resource_8l63m")])
 
 [node name="JumpPad" parent="." instance=ExtResource("12_lpfcl")]
 position = Vector2(425, 148)
+
+[node name="Exit" parent="." instance=ExtResource("13_e45qv")]
+position = Vector2(-693, 93)

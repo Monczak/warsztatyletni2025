@@ -17,6 +17,8 @@ var _grabbed_interactable = null
 var _impulse_velocity: Vector2
 var _apply_impulse_velocity := false
 
+var _controls_enabled := true
+
 
 func _calculate_gravity() -> Vector2:
     var gravity := get_gravity()
@@ -62,6 +64,9 @@ func _interact() -> void:
 func _ready() -> void:
     interaction_area.body_entered.connect(_on_body_entered_interaction_area)
     interaction_area.body_exited.connect(_on_body_exited_interaction_area)
+    
+    Game.victory.connect(func(): _controls_enabled = false)
+    Game.start.connect(func(): _controls_enabled = true)
 
 
 func _process(delta: float) -> void:
@@ -75,16 +80,16 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
     if not is_on_floor():
         velocity += _calculate_gravity() * delta
-
-    if Input.is_action_just_pressed("Jump") and is_on_floor():
-        velocity.y = jump_velocity
-    
+        
     if _apply_impulse_velocity:
         velocity = _impulse_velocity
         _apply_impulse_velocity = false
 
+    if Input.is_action_just_pressed("Jump") and _controls_enabled and is_on_floor():
+        velocity.y = jump_velocity
+
     var direction := Input.get_axis("MoveLeft", "MoveRight")
-    if direction:
+    if direction and _controls_enabled:
         velocity.x = move_toward(velocity.x, direction * max_speed, acceleration * delta)
     else:
         velocity.x = move_toward(velocity.x, 0, acceleration * delta)
