@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-var movingObject
+var target_obj
 func _enable_plugin() -> void:
 	#update_overlays()
 	#print_debug("enable!")
@@ -9,12 +9,12 @@ func _enable_plugin() -> void:
 	
 func _edit(object :Object) ->void:
 	#print("edit")
-	movingObject = object
+	target_obj = object
 	
 func _handles(object: Object) -> bool:
 	#print("handles")
 	return true
-	#return movingObject is MovingObject
+	#return target_obj is MovingObject
 	
 func _forward_canvas_force_draw_over_viewport(viewport_control: Control) -> void:
 	pass
@@ -57,7 +57,7 @@ func _exit_tree() -> void:
 	
 func _worldToScreenPosition(object : Node2D,worldOffset : Vector2 = Vector2.ZERO) -> Vector2:
 	var screen_coord = object.get_viewport().get_screen_transform() * object.get_global_transform_with_canvas() * (worldOffset)
-	#var offset = (movingObject.get_local_mouse_position() - movingObject.get_viewport().get_mouse_position())
+	#var offset = (target_obj.get_local_mouse_position() - target_obj.get_viewport().get_mouse_position())
 	return screen_coord #+ offset;
 	
 const TRANSPARENCY : float = 0.7
@@ -66,14 +66,18 @@ const LINE_COLOR : Color = Color.BLACK;
 const FIRST_DOT_COLOR : Color = Color.AQUAMARINE;
 const SECOND_DOT_COLOR : Color = Color.DEEP_PINK;
 func _main(overlay :Control, screenOffset : Vector2) -> void:
-	if not movingObject:
+	if not target_obj:
 		return
-	if movingObject is MovingObject:
+	if target_obj is MovingObject:
 		#print_debug("AQUAMARINE!")
-		overlay.draw_line(_worldToScreenPosition(movingObject) + screenOffset,_worldToScreenPosition(movingObject,movingObject.DestinationDelta) + screenOffset,OUTLINE_COLOR * TRANSPARENCY,5)
-		overlay.draw_line(_worldToScreenPosition(movingObject) + screenOffset,_worldToScreenPosition(movingObject,movingObject.DestinationDelta) + screenOffset,LINE_COLOR * TRANSPARENCY,2)
-		overlay.draw_circle(_worldToScreenPosition(movingObject) + screenOffset, 6,OUTLINE_COLOR * TRANSPARENCY)
-		overlay.draw_circle(_worldToScreenPosition(movingObject) + screenOffset, 4,FIRST_DOT_COLOR * TRANSPARENCY)
-		overlay.draw_circle(_worldToScreenPosition(movingObject,movingObject.DestinationDelta) + screenOffset,6,OUTLINE_COLOR  * TRANSPARENCY)
-		overlay.draw_circle(_worldToScreenPosition(movingObject,movingObject.DestinationDelta) + screenOffset,4,SECOND_DOT_COLOR  * TRANSPARENCY)
+		overlay.draw_line(_worldToScreenPosition(target_obj) + screenOffset,_worldToScreenPosition(target_obj,target_obj.DestinationDelta) + screenOffset,OUTLINE_COLOR * TRANSPARENCY,5)
+		overlay.draw_line(_worldToScreenPosition(target_obj) + screenOffset,_worldToScreenPosition(target_obj,target_obj.DestinationDelta) + screenOffset,LINE_COLOR * TRANSPARENCY,2)
+		overlay.draw_circle(_worldToScreenPosition(target_obj) + screenOffset, 6,OUTLINE_COLOR * TRANSPARENCY)
+		overlay.draw_circle(_worldToScreenPosition(target_obj) + screenOffset, 4,FIRST_DOT_COLOR * TRANSPARENCY)
+		overlay.draw_circle(_worldToScreenPosition(target_obj,target_obj.DestinationDelta) + screenOffset,6,OUTLINE_COLOR  * TRANSPARENCY)
+		overlay.draw_circle(_worldToScreenPosition(target_obj,target_obj.DestinationDelta) + screenOffset,4,SECOND_DOT_COLOR  * TRANSPARENCY)
+	elif target_obj is PeriodicTimer:
+		for connection in target_obj.connections:
+			var interactable_obj: ObjectInteractable = target_obj.get_node(connection.interactable)
+			overlay.draw_line(_worldToScreenPosition(target_obj) + screenOffset, _worldToScreenPosition(interactable_obj) + screenOffset, OUTLINE_COLOR * TRANSPARENCY, 5)
 	pass
