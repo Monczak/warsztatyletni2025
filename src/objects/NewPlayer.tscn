@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ogahwypwonms"]
+
+[ext_resource type="Script" path="res://src/objects/Player.gd" id="1_edy8u"]
+[ext_resource type="Texture2D" uid="uid://cabwwfn2u5qlb" path="res://icon.svg" id="2_6sc25"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wh26c"]
+radius = 37.0
+height = 74.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7608g"]
+size = Vector2(132, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ornoy"]
+size = Vector2(40, 20)
+
+[node name="Player" type="RigidBody2D"]
+lock_rotation = true
+script = ExtResource("1_edy8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_6sc25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wh26c")
+
+[node name="GrabPoint" type="Node2D" parent="."]
+position = Vector2(0, -74)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_7608g")
+debug_color = Color(0.929412, 0.0666667, 0.631373, 0.419608)
+
+[node name="JumpArea" type="Area2D" parent="."]
+position = Vector2(0, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea"]
+shape = SubResource("RectangleShape2D_ornoy")
+debug_color = Color(0, 0.646111, 0.244846, 0.42)
