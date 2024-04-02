@@ -8,7 +8,8 @@ class_name Player
 @export var jump_gravity_multiplier := 0.6
 @export var fall_gravity_multiplier := 2.2
 
-@export var animation_speed := 5.0
+@export var animation_speed_idle := 5.0
+@export var animation_speed_full_speed := 5.0
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var grab_point: Node2D = $GrabPoint
@@ -21,6 +22,11 @@ var _impulse_velocity: Vector2
 var _apply_impulse_velocity := false
 
 var _controls_enabled := true
+
+var _current_frame = 0
+var _last_frame_change_time = 0
+
+var _facing_right = true
 
 
 func _calculate_gravity() -> Vector2:
@@ -84,9 +90,21 @@ func _process(delta: float) -> void:
 
 func _animate_sprite() -> void:
     var time = Time.get_ticks_msec() / 1000.0
-    var frame = (floor(time * animation_speed) as int) % 5
-    sprite.frame = frame
+    var vel_ratio = inverse_lerp(0, max_speed, abs(velocity.x))
+    var anim_speed = lerp(animation_speed_idle, animation_speed_full_speed, vel_ratio)
+   
+    if velocity.x < -0.01:
+        _facing_right = false
+    elif velocity.x > 0.01:
+        _facing_right = true
 
+    if time - _last_frame_change_time > 1.0 / anim_speed:
+        _current_frame += -1 if _facing_right else 1
+        _current_frame = (_current_frame + 5) % 5
+        sprite.frame = _current_frame
+        _last_frame_change_time = time
+    
+    
 
 func _physics_process(delta: float) -> void:
     if not is_on_floor():
