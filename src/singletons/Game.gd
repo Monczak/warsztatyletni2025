@@ -43,6 +43,10 @@ func reset_game() -> void:
     _root.load_world()
     start.emit()
     
+    await get_tree().process_frame
+    
+    get_camera().target = get_level().get_node("Player")
+    
     
 func _ready() -> void:
     reset_game()

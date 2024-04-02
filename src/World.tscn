@@ -12,9 +12,6 @@ player_tscn = ExtResource("2_2o6v2")
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("1_5iml6")
 acceleration = 5
-target = NodePath("../Player")
+target = NodePath("../Level/Player")
 
 [node name="Level" parent="." instance=ExtResource("1_kbm2b")]
-
-[node name="Player" parent="." instance=ExtResource("2_2o6v2")]
-position = Vector2(2, 16)

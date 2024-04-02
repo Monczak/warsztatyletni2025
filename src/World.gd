@@ -18,5 +18,5 @@ func get_camera() -> Camera:
 func spawn_player() -> Player:
     var player := player_tscn.instantiate() as Player
     player.global_position = get_level().get_player_respawn_point().global_position
-    add_child(player)
+    _level.add_child(player)    
     return player
