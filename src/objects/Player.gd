@@ -8,6 +8,9 @@ class_name Player
 @export var jump_gravity_multiplier := 0.6
 @export var fall_gravity_multiplier := 2.2
 
+@export var animation_speed := 5.0
+
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var grab_point: Node2D = $GrabPoint
 @onready var interaction_area: Area2D = $InteractionArea
 
@@ -75,6 +78,14 @@ func _process(delta: float) -> void:
 
     if _grabbed_interactable != null:
         _grabbed_interactable.fix_position(grab_point.global_position, velocity)
+
+    _animate_sprite()
+
+
+func _animate_sprite() -> void:
+    var time = Time.get_ticks_msec() / 1000.0
+    var frame = (floor(time * animation_speed) as int) % 5
+    sprite.frame = frame
 
 
 func _physics_process(delta: float) -> void:

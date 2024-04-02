@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cc54w6n5ncad1"]
 
 [ext_resource type="Script" path="res://src/objects/Player.gd" id="1_7ey65"]
-[ext_resource type="Texture2D" uid="uid://cabwwfn2u5qlb" path="res://icon.svg" id="2_f7md5"]
+[ext_resource type="Texture2D" uid="uid://bbxswxabw5g4q" path="res://images/Ghost/Ghost.png" id="2_vclgv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_buivh"]
 radius = 37.0
@@ -15,10 +15,12 @@ collision_mask = 6
 platform_on_leave = 1
 script = ExtResource("1_7ey65")
 max_speed = 400.0
+animation_speed = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.625, 0.625)
-texture = ExtResource("2_f7md5")
+scale = Vector2(4.75, 4.75)
+texture = ExtResource("2_vclgv")
+hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_buivh")
