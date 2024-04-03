@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name ButtonObj
 
 @export var button_force: float = 100.0
 @export var press_threshold: float = 10

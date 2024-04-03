@@ -23,6 +23,9 @@ enum ToggleResetMode { LastToggledState, ForceOn, ForceOff }
 @export var initial_behavior := TimerBehavior.Start
 @export var toggle_reset_mode := ToggleResetMode.ForceOff
 
+@onready var sprite: Sprite2D = $Sprite2D
+
+var _frame_count = 8
 
 var _scheduled_behavior = null
 
@@ -97,9 +100,10 @@ func _process(delta: float) -> void:
 			if _time >= connection.phase_shift * cycle_time:
 				_handle_connection(connection)
 				
-		
 		if _time > cycle_time and loop:
 			_start_cycle()
+			
+	sprite.frame = int(floor(inverse_lerp(0, _frame_count - 0.01, _time / cycle_time)))
 	
 	if _scheduled_behavior != null:
 		_do_behavior(_scheduled_behavior)
