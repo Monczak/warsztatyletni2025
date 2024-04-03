@@ -31,13 +31,13 @@ var velocity : Vector2 = Vector2.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta : float) -> void:
-	#const closeToZero : float = 1
-	#var desiredRelocation : Vector2 = Vector2.ZERO
+    #const closeToZero : float = 1
+    #var desiredRelocation : Vector2 = Vector2.ZERO
 #
-	#if _originFlag:
-		#desiredRelocation = _origin - position
-	#else:
-		#desiredRelocation = _destination - position
+    #if _originFlag:
+        #desiredRelocation = _origin - position
+    #else:
+        #desiredRelocation = _destination - position
 
     #if desiredRelocation.length() > closeToZero:
         #position = lerp(position, position + desiredRelocation.normalized(), _acceleration * delta)
@@ -52,5 +52,5 @@ func _physics_process(delta : float) -> void:
     
     
 #func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
-	#_rb.linear_velocity = velocity
-	#transform.position = (Vector2)transform.position + desiredRelocation;
+    #_rb.linear_velocity = velocity
+    #transform.position = (Vector2)transform.position + desiredRelocation;
