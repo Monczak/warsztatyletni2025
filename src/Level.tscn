@@ -69,6 +69,7 @@ scale = Vector2(10.52, 1)
 position = Vector2(-323, 120)
 
 [node name="PlayerRespawnPoint" type="Node2D" parent="."]
+position = Vector2(-63, 37)
 script = ExtResource("4_7pvq8")
 
 [node name="Goo" parent="." instance=ExtResource("5_t53vl")]
