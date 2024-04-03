@@ -61,9 +61,8 @@ trigger_mode = 2
 [node name="Level" type="Node2D"]
 script = ExtResource("1_m0kto")
 
-[node name="Platform" parent="." instance=ExtResource("1_3lw1l")]
-position = Vector2(-172, 219)
-scale = Vector2(10.52, 1)
+[node name="Player" parent="." instance=ExtResource("14_o64fp")]
+position = Vector2(-63, 37)
 
 [node name="Box" parent="." instance=ExtResource("2_lc76d")]
 z_index = 0
@@ -74,7 +73,6 @@ position = Vector2(-63, 37)
 script = ExtResource("4_7pvq8")
 
 [node name="Goo" parent="." instance=ExtResource("5_t53vl")]
-z_index = 0
 position = Vector2(623, 214)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_3ui4n")]
@@ -103,17 +101,15 @@ position = Vector2(179, -179)
 DestinationDelta = Vector2(100, 0)
 
 [node name="PeriodicTimer" parent="." instance=ExtResource("7_8ss7w")]
-position = Vector2(-160, -133)
+position = Vector2(518, 0)
 cycle_time = 5.0
 connections = Array[ExtResource("8_gbsuk")]([SubResource("Resource_ycknl"), SubResource("Resource_p0ssg"), SubResource("Resource_cebjb"), SubResource("Resource_hnlk2"), SubResource("Resource_7evgf")])
 initial_behavior = 3
 
 [node name="Gate" parent="." instance=ExtResource("9_60672")]
-z_index = 0
 position = Vector2(-463, 85)
 
 [node name="Key" parent="." instance=ExtResource("10_1k2cq")]
-z_index = 0
 position = Vector2(-267, 121)
 interactions = Array[ExtResource("11_881yx")]([SubResource("Resource_gjcj3")])
 
@@ -122,16 +118,40 @@ position = Vector2(-163, 140)
 interactions = Array[ExtResource("11_881yx")]([SubResource("Resource_8l63m")])
 
 [node name="JumpPad" parent="." instance=ExtResource("12_lpfcl")]
-z_index = 0
-position = Vector2(425, 148)
+position = Vector2(425, 141)
 
 [node name="JumpPad2" parent="." instance=ExtResource("12_lpfcl")]
-z_index = 0
-position = Vector2(39, 146)
+position = Vector2(40, 141)
 
 [node name="Exit" parent="." instance=ExtResource("13_e45qv")]
-z_index = 0
-position = Vector2(-693, 93)
+position = Vector2(-689, 92)
 
-[node name="Player" parent="." instance=ExtResource("14_o64fp")]
-position = Vector2(-63, 37)
+[node name="Platform" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(-704, 224)
+
+[node name="Platform2" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(-576, 224)
+
+[node name="Platform3" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(-448, 224)
+
+[node name="Platform4" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(-320, 224)
+
+[node name="Platform5" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(-192, 224)
+
+[node name="Platform6" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(-64, 224)
+
+[node name="Platform7" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(64, 224)
+
+[node name="Platform8" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(192, 224)
+
+[node name="Platform9" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(320, 224)
+
+[node name="Platform10" parent="." instance=ExtResource("1_3lw1l")]
+position = Vector2(448, 224)

@@ -25,7 +25,7 @@ enum ToggleResetMode { LastToggledState, ForceOn, ForceOff }
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-var _frame_count = 8
+var _frame_count = 34
 
 var _scheduled_behavior = null
 
@@ -103,7 +103,8 @@ func _process(delta: float) -> void:
         if _time > cycle_time and loop:
             _start_cycle()
             
-    sprite.frame = int(floor(inverse_lerp(0, _frame_count - 0.01, _time / cycle_time)))
+    sprite.frame = int(floor(lerp(0.0, _frame_count - 0.01, _time / cycle_time)))
+    print(sprite.frame)
     
     if _scheduled_behavior != null:
         _do_behavior(_scheduled_behavior)
