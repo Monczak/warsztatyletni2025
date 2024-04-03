@@ -55,24 +55,24 @@ func _start_cycle() -> void:
 	_time = 0
 	_timed_out = false
 	
-	print("Start")
+	# print("Start")
 
 
 func _pause_cycle() -> void:
 	_paused = true
-	print("Pause")
+	# print("Pause")
 	
 	
 func _unpause_cycle() -> void:
 	_paused = false
-	print("Unpause")
+	# print("Unpause")
 
 
 func _reset_cycle() -> void:
 	_time = 0
 	_paused = true
 	_reset_interactables()
-	print("Reset")
+	# print("Reset")
 
 
 func OnInteraction() -> void:
@@ -119,7 +119,7 @@ func _handle_connection(connection: TimerConnection) -> void:
 	if _connection_handled[connection]:
 		return
 		
-	print("Handle " + str(connection))
+	# print("Handle " + str(connection))
 
 	var interactable: ObjectInteractable = get_node(connection.interactable)
 	match connection.mode:
