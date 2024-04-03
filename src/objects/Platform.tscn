@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckew637ot2m0i"]
 
-[ext_resource type="Texture2D" uid="uid://cabwwfn2u5qlb" path="res://icon.svg" id="1_bej0p"]
+[ext_resource type="Texture2D" uid="uid://ce37ffpagcawq" path="res://images/MetalicTile.png" id="1_sksev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0nca"]
 size = Vector2(128, 128)
@@ -10,7 +10,10 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bej0p")
+texture_repeat = 2
+texture = ExtResource("1_sksev")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r0nca")

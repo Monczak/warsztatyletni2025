@@ -66,6 +66,7 @@ position = Vector2(-172, 219)
 scale = Vector2(10.52, 1)
 
 [node name="Box" parent="." instance=ExtResource("2_lc76d")]
+z_index = 0
 position = Vector2(-323, 120)
 
 [node name="PlayerRespawnPoint" type="Node2D" parent="."]
@@ -73,25 +74,31 @@ position = Vector2(-63, 37)
 script = ExtResource("4_7pvq8")
 
 [node name="Goo" parent="." instance=ExtResource("5_t53vl")]
+z_index = 0
 position = Vector2(623, 214)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_3ui4n")]
+z_index = 0
 position = Vector2(179, 99)
 DestinationDelta = Vector2(100, 0)
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_3ui4n")]
+z_index = 0
 position = Vector2(179, 29)
 DestinationDelta = Vector2(100, 0)
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("6_3ui4n")]
+z_index = 0
 position = Vector2(179, -39)
 DestinationDelta = Vector2(100, 0)
 
 [node name="MovingPlatform4" parent="." instance=ExtResource("6_3ui4n")]
+z_index = 0
 position = Vector2(179, -109)
 DestinationDelta = Vector2(100, 0)
 
 [node name="MovingPlatform5" parent="." instance=ExtResource("6_3ui4n")]
+z_index = 0
 position = Vector2(179, -179)
 DestinationDelta = Vector2(100, 0)
 
@@ -102,9 +109,11 @@ connections = Array[ExtResource("8_gbsuk")]([SubResource("Resource_ycknl"), SubR
 initial_behavior = 3
 
 [node name="Gate" parent="." instance=ExtResource("9_60672")]
+z_index = 0
 position = Vector2(-463, 85)
 
 [node name="Key" parent="." instance=ExtResource("10_1k2cq")]
+z_index = 0
 position = Vector2(-267, 121)
 interactions = Array[ExtResource("11_881yx")]([SubResource("Resource_gjcj3")])
 
@@ -113,12 +122,15 @@ position = Vector2(-163, 140)
 interactions = Array[ExtResource("11_881yx")]([SubResource("Resource_8l63m")])
 
 [node name="JumpPad" parent="." instance=ExtResource("12_lpfcl")]
+z_index = 0
 position = Vector2(425, 148)
 
 [node name="JumpPad2" parent="." instance=ExtResource("12_lpfcl")]
+z_index = 0
 position = Vector2(39, 146)
 
 [node name="Exit" parent="." instance=ExtResource("13_e45qv")]
+z_index = 0
 position = Vector2(-693, 93)
 
 [node name="Player" parent="." instance=ExtResource("14_o64fp")]
