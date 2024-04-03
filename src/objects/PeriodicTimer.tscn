@@ -5,6 +5,3 @@
 [node name="PeriodicTimer" type="Node2D"]
 script = ExtResource("1_51fg0")
 cycle_time = 1.0
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
