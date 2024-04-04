@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="1_3lw1l"]
 [ext_resource type="Script" path="res://src/Level.gd" id="1_m0kto"]
 [ext_resource type="PackedScene" uid="uid://j0lb6kqeeuos" path="res://src/objects/Box.tscn" id="2_lc76d"]
-[ext_resource type="Script" path="res://src/PlayerRespawnPoint.gd" id="4_7pvq8"]
+[ext_resource type="PackedScene" uid="uid://6xcd341n6vwc" path="res://src/objects/PlayerRespawnPoint.tscn" id="4_ti4rp"]
 [ext_resource type="PackedScene" uid="uid://qny4rb3ykp28" path="res://src/objects/Goo.tscn" id="5_t53vl"]
 [ext_resource type="PackedScene" uid="uid://b4xunxy4vkl0s" path="res://src/sosivo/prefabs/MovingPlatform.tscn" id="6_3ui4n"]
 [ext_resource type="PackedScene" uid="uid://ccmq77qe4la" path="res://src/objects/PeriodicTimer.tscn" id="7_8ss7w"]
@@ -68,9 +68,7 @@ position = Vector2(-63, 37)
 z_index = 0
 position = Vector2(-323, 120)
 
-[node name="PlayerRespawnPoint" type="Node2D" parent="."]
-position = Vector2(-63, 37)
-script = ExtResource("4_7pvq8")
+[node name="PlayerRespawnPoint" parent="." instance=ExtResource("4_ti4rp")]
 
 [node name="Goo" parent="." instance=ExtResource("5_t53vl")]
 position = Vector2(623, 214)
