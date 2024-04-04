@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0dhi1xuu77if" path="res://src/levels/ExampleLevel4.tscn" id="3_xj3vn"]
 [ext_resource type="Script" path="res://src/Particles.gd" id="5_drron"]
 [ext_resource type="PackedScene" uid="uid://cyo3cjknpjwht" path="res://src/particles/PlayerDeathParticles.tscn" id="6_vqegi"]
-[ext_resource type="PackedScene" path="res://src/Background.tscn" id="7_w5hwx"]
+[ext_resource type="PackedScene" uid="uid://bpl8ff35757bq" path="res://src/Background.tscn" id="7_w5hwx"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_fbkx8")
