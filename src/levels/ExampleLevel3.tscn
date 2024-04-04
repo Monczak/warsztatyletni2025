@@ -141,8 +141,8 @@ position = Vector2(-352, 128)
 interactions = Array[ExtResource("5_3bj8w")]([SubResource("Resource_ddqhw")])
 
 [node name="MovingPlatform" parent="." index="32" instance=ExtResource("5_p3f6d")]
-position = Vector2(224, 160)
-DestinationDelta = Vector2(700, 0)
+position = Vector2(192, 160)
+DestinationDelta = Vector2(750, 0)
 
 [node name="Player" parent="." index="33" instance=ExtResource("7_s0pkk")]
 position = Vector2(-64, 64)

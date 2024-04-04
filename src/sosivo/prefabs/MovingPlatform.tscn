@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4xunxy4vkl0s"]
 
 [ext_resource type="Script" path="res://src/sosivo/scripts/MovingObject.gd" id="1_mfvqv"]
-[ext_resource type="Texture2D" uid="uid://dvmt5ta6e00vf" path="res://images/white.png" id="2_i4ph8"]
+[ext_resource type="Texture2D" uid="uid://d3npslo1p2wpb" path="res://images/gate.png" id="2_jhgm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlgry"]
-size = Vector2(200, 50)
+size = Vector2(128, 32)
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 z_index = 5
@@ -17,8 +17,9 @@ DestinationDelta = Vector2(0, -300)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.685266, 0.27289, 0.304541, 1)
-scale = Vector2(100, 25)
-texture = ExtResource("2_i4ph8")
+rotation = 1.57079
+scale = Vector2(2, 2)
+texture = ExtResource("2_jhgm8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qlgry")
