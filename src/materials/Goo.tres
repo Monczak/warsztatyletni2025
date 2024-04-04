@@ -4,8 +4,8 @@
 
 [resource]
 shader = ExtResource("1_bv06w")
-shader_parameter/wave_squish = 10.0
+shader_parameter/wave_squish = 18.0
 shader_parameter/wave_frequency = 6.0
-shader_parameter/wave_quantization = 1.0
-shader_parameter/wave_amplitude = 0.03
-shader_parameter/wave_offset = -0.03
+shader_parameter/wave_quantization = 2.0
+shader_parameter/wave_amplitude = 0.04
+shader_parameter/wave_offset = -0.04
