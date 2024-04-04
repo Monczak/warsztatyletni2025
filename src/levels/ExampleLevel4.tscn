@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://du36k4g5svai3" path="res://src/Level.tscn" id="1_mdv0x"]
 [ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="2_7tq50"]
-[ext_resource type="PackedScene" uid="uid://b4xunxy4vkl0s" path="res://src/sosivo/prefabs/MovingPlatform.tscn" id="3_y435r"]
+[ext_resource type="PackedScene" uid="uid://b4xunxy4vkl0s" path="res://src/objects/MovingPlatform.tscn" id="3_y435r"]
 [ext_resource type="PackedScene" uid="uid://cc54w6n5ncad1" path="res://src/objects/Player.tscn" id="4_gf0o7"]
 [ext_resource type="PackedScene" uid="uid://ccmq77qe4la" path="res://src/objects/PeriodicTimer.tscn" id="5_gs2he"]
 [ext_resource type="Script" path="res://src/resources/TimerConnection.gd" id="6_ws7sk"]

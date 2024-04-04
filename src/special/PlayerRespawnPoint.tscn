@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://6xcd341n6vwc"]
 
-[ext_resource type="Script" path="res://src/objects/PlayerRespawnPoint.gd" id="1_2p1fw"]
+[ext_resource type="Script" path="res://src/special/PlayerRespawnPoint.gd" id="1_2p1fw"]
 
 [node name="PlayerRespawnPoint" type="Node2D"]
 position = Vector2(-63, 37)
