@@ -12,10 +12,12 @@ z_index = 8
 script = ExtResource("1_gmimu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
 material = ExtResource("2_5jvj8")
 scale = Vector2(8, 8)
 texture = ExtResource("3_b4cn7")
 hframes = 9
+region_rect = Rect2(0, 0, 1024, 128)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
