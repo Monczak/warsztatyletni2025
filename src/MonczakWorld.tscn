@@ -4,8 +4,5 @@
 
 [node name="World" instance=ExtResource("1_rodkb")]
 
-[node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("target")]
-target = NodePath("../Level/Player")
-
-[node name="Background" parent="." index="3" node_paths=PackedStringArray("camera")]
+[node name="Background" parent="." index="2" node_paths=PackedStringArray("camera")]
 camera = NodePath("../Camera2D")

@@ -8,15 +8,10 @@
 [node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
 
-[node name="Goo" parent="Level" index="3"]
-position = Vector2(642, 217)
-
-[node name="MovingPlatform" parent="Level" index="4"]
-position = Vector2(306, 68)
-
 [node name="Player" parent="." index="2" instance=ExtResource("2_tbmnw")]
 position = Vector2(2, 16)
 animation_speed_idle = 5.0
 animation_speed_full_speed = 5.0
 
-[editable path="Level"]
+[node name="Background" parent="." index="3" node_paths=PackedStringArray("camera")]
+camera = NodePath("../Camera2D")

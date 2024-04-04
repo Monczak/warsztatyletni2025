@@ -16,7 +16,7 @@ class_name Player
 @onready var interaction_area: Area2D = $InteractionArea
 
 var _player_interactables := []
-var _grabbed_interactable = null
+var _grabbed_interactable: PlayerInteractable = null
 
 var _impulse_velocity: Vector2
 var _apply_impulse_velocity := false

@@ -20,7 +20,7 @@ script = ExtResource("1_oyj55")
 button_force = 4000.0
 
 [node name="MovingPart" type="RigidBody2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -34)
 collision_layer = 2
 collision_mask = 5
 can_sleep = false
@@ -39,16 +39,16 @@ shape = SubResource("RectangleShape2D_wqd3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.560784, 0.403922, 1)
-position = Vector2(0, -8)
+position = Vector2(0, -31)
 scale = Vector2(4, 4)
 texture = ExtResource("2_13rx2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_djdu7")
 
 [node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
-position = Vector2(0, 22)
+position = Vector2(0, -1)
 rotation = -3.14159
 node_a = NodePath("..")
 node_b = NodePath("../MovingPart")
@@ -56,6 +56,7 @@ length = 10.0
 initial_offset = 10.0
 
 [node name="PressArea" type="Area2D" parent="."]
+position = Vector2(0, -23)
 collision_layer = 2
 collision_mask = 5
 

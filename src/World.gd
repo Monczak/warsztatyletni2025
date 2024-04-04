@@ -2,10 +2,17 @@ extends Node2D
 class_name World
 
 @export var player_tscn: PackedScene
+@export var level_tscn: PackedScene
 
-@onready var _level: Level = $Level
+var _level: Level
 @onready var _camera: Camera = $Camera2D
 @onready var _particles: Particles = $Particles
+
+
+func _enter_tree() -> void:
+	var level_inst = level_tscn.instantiate()
+	add_child(level_inst)
+	_level = level_inst
 
 
 func get_level() -> Level:
