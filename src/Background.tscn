@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpl8ff35757bq"]
 
 [ext_resource type="Script" path="res://src/Background.gd" id="1_gya2p"]
-[ext_resource type="Texture2D" uid="uid://6tp0gx2h12df" path="res://images/Background2.png" id="2_aqij2"]
+[ext_resource type="Texture2D" uid="uid://c2wqu5e88abbt" path="res://images/Dirt.png" id="2_3q365"]
 
 [node name="Background" type="Node2D"]
 z_index = -100
 script = ExtResource("1_gya2p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.190762, 0.190762, 0.190762, 1)
+modulate = Color(0.0882994, 0.198858, 0.301477, 1)
 texture_repeat = 2
 scale = Vector2(2, 2)
-texture = ExtResource("2_aqij2")
+texture = ExtResource("2_3q365")
 region_enabled = true
 region_rect = Rect2(0, 0, 1024, 1024)
