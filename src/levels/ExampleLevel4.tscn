@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://0dhi1xuu77if"]
+[gd_scene load_steps=14 format=4 uid="uid://0dhi1xuu77if"]
 
 [ext_resource type="PackedScene" uid="uid://du36k4g5svai3" path="res://src/Level.tscn" id="1_mdv0x"]
-[ext_resource type="PackedScene" uid="uid://ckew637ot2m0i" path="res://src/objects/Platform.tscn" id="2_7tq50"]
 [ext_resource type="PackedScene" uid="uid://b4xunxy4vkl0s" path="res://src/objects/MovingPlatform.tscn" id="3_y435r"]
 [ext_resource type="PackedScene" uid="uid://cc54w6n5ncad1" path="res://src/objects/Player.tscn" id="4_gf0o7"]
 [ext_resource type="PackedScene" uid="uid://ccmq77qe4la" path="res://src/objects/PeriodicTimer.tscn" id="5_gs2he"]
 [ext_resource type="Script" uid="uid://gylod7pd0f2f" path="res://src/resources/TimerConnection.gd" id="6_ws7sk"]
 [ext_resource type="PackedScene" uid="uid://qny4rb3ykp28" path="res://src/objects/Goo.tscn" id="7_sychb"]
 [ext_resource type="PackedScene" uid="uid://4o6evssusvq0" path="res://src/objects/Exit.tscn" id="8_l4i4v"]
+[ext_resource type="TileSet" uid="uid://dc0mgwxln31iq" path="res://src/tilesets/Terrain.tres" id="9_eqiyx"]
 
 [sub_resource type="Resource" id="Resource_ik6a3"]
 script = ExtResource("6_ws7sk")
@@ -41,136 +41,67 @@ phase_shift = 0.8
 
 [node name="Level" instance=ExtResource("1_mdv0x")]
 
-[node name="Platform" parent="." index="0" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(64, 320)
-
-[node name="Platform2" parent="." index="1" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(-64, 320)
-
-[node name="MovingPlatform" parent="." index="2" instance=ExtResource("3_y435r")]
+[node name="MovingPlatform" parent="." index="0" instance=ExtResource("3_y435r")]
 position = Vector2(352, 448)
 DestinationDelta = Vector2(0, -120)
 
-[node name="MovingPlatform2" parent="." index="3" instance=ExtResource("3_y435r")]
+[node name="MovingPlatform2" parent="." index="1" instance=ExtResource("3_y435r")]
 position = Vector2(576, 448)
 DestinationDelta = Vector2(0, -120)
 
-[node name="MovingPlatform3" parent="." index="4" instance=ExtResource("3_y435r")]
+[node name="MovingPlatform3" parent="." index="2" instance=ExtResource("3_y435r")]
 position = Vector2(800, 448)
 DestinationDelta = Vector2(0, -120)
 
-[node name="MovingPlatform4" parent="." index="5" instance=ExtResource("3_y435r")]
+[node name="MovingPlatform4" parent="." index="3" instance=ExtResource("3_y435r")]
 position = Vector2(1024, 448)
 DestinationDelta = Vector2(0, -120)
 
-[node name="MovingPlatform5" parent="." index="6" instance=ExtResource("3_y435r")]
+[node name="MovingPlatform5" parent="." index="4" instance=ExtResource("3_y435r")]
 position = Vector2(1248, 448)
 DestinationDelta = Vector2(0, -120)
 
-[node name="Platform4" parent="." index="7" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(192, 320)
-
-[node name="Platform8" parent="." index="8" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(192, 448)
-
-[node name="Platform9" parent="." index="9" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(192, 576)
-
-[node name="Platform10" parent="." index="10" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(320, 576)
-
-[node name="Platform11" parent="." index="11" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(448, 576)
-
-[node name="Platform12" parent="." index="12" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(576, 576)
-
-[node name="Platform13" parent="." index="13" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(704, 576)
-
-[node name="Platform14" parent="." index="14" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(832, 576)
-
-[node name="Platform15" parent="." index="15" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(960, 576)
-
-[node name="Platform16" parent="." index="16" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1088, 576)
-
-[node name="Platform17" parent="." index="17" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1216, 576)
-
-[node name="Platform18" parent="." index="18" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1344, 576)
-
-[node name="Platform19" parent="." index="19" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1408, 576)
-
-[node name="Platform20" parent="." index="20" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1408, 448)
-
-[node name="Platform5" parent="." index="21" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1408, 320)
-
-[node name="Platform6" parent="." index="22" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1536, 320)
-
-[node name="Player" parent="." index="23" instance=ExtResource("4_gf0o7")]
+[node name="Player" parent="." index="5" instance=ExtResource("4_gf0o7")]
 position = Vector2(32, 192)
 
-[node name="Platform22" parent="." index="24" instance=ExtResource("2_7tq50")]
-modulate = Color(0.839216, 0.333333, 1, 1)
-position = Vector2(1664, 320)
-
-[node name="PeriodicTimer" parent="." index="25" instance=ExtResource("5_gs2he")]
+[node name="PeriodicTimer" parent="." index="6" instance=ExtResource("5_gs2he")]
 position = Vector2(224, 128)
 cycle_time = 2.0
 connections = Array[ExtResource("6_ws7sk")]([SubResource("Resource_ik6a3"), SubResource("Resource_ewp3a"), SubResource("Resource_ovm70"), SubResource("Resource_lbeat"), SubResource("Resource_c445t")])
 
-[node name="Goo" parent="." index="26" instance=ExtResource("7_sychb")]
+[node name="Goo" parent="." index="7" instance=ExtResource("7_sychb")]
 position = Vector2(320, 448)
 
-[node name="Goo2" parent="." index="27" instance=ExtResource("7_sychb")]
+[node name="Goo2" parent="." index="8" instance=ExtResource("7_sychb")]
 position = Vector2(448, 448)
 
-[node name="Goo3" parent="." index="28" instance=ExtResource("7_sychb")]
+[node name="Goo3" parent="." index="9" instance=ExtResource("7_sychb")]
 position = Vector2(576, 448)
 
-[node name="Goo4" parent="." index="29" instance=ExtResource("7_sychb")]
+[node name="Goo4" parent="." index="10" instance=ExtResource("7_sychb")]
 position = Vector2(704, 448)
 
-[node name="Goo5" parent="." index="30" instance=ExtResource("7_sychb")]
+[node name="Goo5" parent="." index="11" instance=ExtResource("7_sychb")]
 position = Vector2(832, 448)
 
-[node name="Goo6" parent="." index="31" instance=ExtResource("7_sychb")]
+[node name="Goo6" parent="." index="12" instance=ExtResource("7_sychb")]
 position = Vector2(960, 448)
 
-[node name="Goo7" parent="." index="32" instance=ExtResource("7_sychb")]
+[node name="Goo7" parent="." index="13" instance=ExtResource("7_sychb")]
 position = Vector2(1088, 448)
 
-[node name="Goo8" parent="." index="33" instance=ExtResource("7_sychb")]
+[node name="Goo8" parent="." index="14" instance=ExtResource("7_sychb")]
 position = Vector2(1216, 448)
 
-[node name="Goo9" parent="." index="34" instance=ExtResource("7_sychb")]
+[node name="Goo9" parent="." index="15" instance=ExtResource("7_sychb")]
 position = Vector2(1344, 448)
 
-[node name="Exit" parent="." index="35" instance=ExtResource("8_l4i4v")]
+[node name="Exit" parent="." index="16" instance=ExtResource("8_l4i4v")]
 position = Vector2(1536, 192)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="17"]
+modulate = Color(0.839216, 0.333333, 1, 1)
+z_index = 10
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD8/wgAAwAAAAAAAAD8/wkAAwAAAAAAAAD8/woAAwAAAAAAAAD8/wsAAwAAAAAAAAD9/wgAAwAAAAAAAAD9/wkAAwAAAAAAAAD9/woAAwAAAAAAAAD9/wsAAwAAAAAAAAD+/wgAAwAAAAAAAAD+/wkAAwAAAAAAAAD+/woAAwAAAAAAAAD+/wsAAwAAAAAAAAD//wgAAwAAAAAAAAD//wkAAwAAAAAAAAD//woAAwAAAAAAAAD//wsAAwAAAAAAAAAAAAgAAwAAAAAAAAAAAAkAAwAAAAAAAAAAAAoAAwAAAAAAAAAAAAsAAwAAAAAAAAABAAgAAwAAAAAAAAABAAkAAwAAAAAAAAABAAoAAwAAAAAAAAABAAsAAwAAAAAAAAACAAgAAwAAAAAAAAACAAkAAwAAAAAAAAACAAoAAwAAAAAAAAACAAsAAwAAAAAAAAADAAgAAwAAAAAAAAADAAkAAwAAAAAAAAADAAoAAwAAAAAAAAADAAsAAwAAAAAAAAAEAAgAAwAAAAAAAAAEAAkAAwAAAAAAAAAEAAoAAwAAAAAAAAAEAAsAAwAAAAAAAAAFAAgAAwAAAAAAAAAFAAkAAwAAAAAAAAAFAAoAAwAAAAAAAAAFAAsAAwAAAAAAAAAGAAgAAwAAAAAAAAAGAAkAAwAAAAAAAAAGAAoAAwAAAAAAAAAGAAsAAwAAAAAAAAAHAAgAAwAAAAAAAAAHAAkAAwAAAAAAAAAHAAoAAwAAAAAAAAAHAAsAAwAAAAAAAAAEAAwAAwAAAAAAAAAEAA0AAwAAAAAAAAAEAA4AAwAAAAAAAAAEAA8AAwAAAAAAAAAEABAAAwAAAAAAAAAEABEAAwAAAAAAAAAEABIAAwAAAAAAAAAEABMAAwAAAAAAAAAFAAwAAwAAAAAAAAAFAA0AAwAAAAAAAAAFAA4AAwAAAAAAAAAFAA8AAwAAAAAAAAAFABAAAwAAAAAAAAAFABEAAwAAAAAAAAAFABIAAwAAAAAAAAAFABMAAwAAAAAAAAAGAAwAAwAAAAAAAAAGAA0AAwAAAAAAAAAGAA4AAwAAAAAAAAAGAA8AAwAAAAAAAAAGABAAAwAAAAAAAAAGABEAAwAAAAAAAAAGABIAAwAAAAAAAAAGABMAAwAAAAAAAAAHAAwAAwAAAAAAAAAHAA0AAwAAAAAAAAAHAA4AAwAAAAAAAAAHAA8AAwAAAAAAAAAHABAAAwAAAAAAAAAHABEAAwAAAAAAAAAHABIAAwAAAAAAAAAHABMAAwAAAAAAAAAIABAAAwAAAAAAAAAIABEAAwAAAAAAAAAIABIAAwAAAAAAAAAIABMAAwAAAAAAAAAJABAAAwAAAAAAAAAJABEAAwAAAAAAAAAJABIAAwAAAAAAAAAJABMAAwAAAAAAAAAKABAAAwAAAAAAAAAKABEAAwAAAAAAAAAKABIAAwAAAAAAAAAKABMAAwAAAAAAAAALABAAAwAAAAAAAAALABEAAwAAAAAAAAALABIAAwAAAAAAAAALABMAAwAAAAAAAAAMABAAAwAAAAAAAAAMABEAAwAAAAAAAAAMABIAAwAAAAAAAAAMABMAAwAAAAAAAAANABAAAwAAAAAAAAANABEAAwAAAAAAAAANABIAAwAAAAAAAAANABMAAwAAAAAAAAAOABAAAwAAAAAAAAAOABEAAwAAAAAAAAAOABIAAwAAAAAAAAAOABMAAwAAAAAAAAAPABAAAwAAAAAAAAAPABEAAwAAAAAAAAAPABIAAwAAAAAAAAAPABMAAwAAAAAAAAAQABAAAwAAAAAAAAAQABEAAwAAAAAAAAAQABIAAwAAAAAAAAAQABMAAwAAAAAAAAARABAAAwAAAAAAAAARABEAAwAAAAAAAAARABIAAwAAAAAAAAARABMAAwAAAAAAAAASABAAAwAAAAAAAAASABEAAwAAAAAAAAASABIAAwAAAAAAAAASABMAAwAAAAAAAAATABAAAwAAAAAAAAATABEAAwAAAAAAAAATABIAAwAAAAAAAAATABMAAwAAAAAAAAAUABAAAwAAAAAAAAAUABEAAwAAAAAAAAAUABIAAwAAAAAAAAAUABMAAwAAAAAAAAAVABAAAwAAAAAAAAAVABEAAwAAAAAAAAAVABIAAwAAAAAAAAAVABMAAwAAAAAAAAAWABAAAwAAAAAAAAAWABEAAwAAAAAAAAAWABIAAwAAAAAAAAAWABMAAwAAAAAAAAAXABAAAwAAAAAAAAAXABEAAwAAAAAAAAAXABIAAwAAAAAAAAAXABMAAwAAAAAAAAAYABAAAwAAAAAAAAAYABEAAwAAAAAAAAAYABIAAwAAAAAAAAAYABMAAwAAAAAAAAAZABAAAwAAAAAAAAAZABEAAwAAAAAAAAAZABIAAwAAAAAAAAAZABMAAwAAAAAAAAAaABAAAwAAAAAAAAAaABEAAwAAAAAAAAAaABIAAwAAAAAAAAAaABMAAwAAAAAAAAAbABAAAwAAAAAAAAAbABEAAwAAAAAAAAAbABIAAwAAAAAAAAAbABMAAwAAAAAAAAAcABAAAwAAAAAAAAAcABEAAwAAAAAAAAAcABIAAwAAAAAAAAAcABMAAwAAAAAAAAAdABAAAwAAAAAAAAAdABEAAwAAAAAAAAAdABIAAwAAAAAAAAAdABMAAwAAAAAAAAAeABAAAwAAAAAAAAAeABEAAwAAAAAAAAAeABIAAwAAAAAAAAAeABMAAwAAAAAAAAAfABAAAwAAAAAAAAAfABEAAwAAAAAAAAAfABIAAwAAAAAAAAAfABMAAwAAAAAAAAAgABAAAwAAAAAAAAAgABEAAwAAAAAAAAAgABIAAwAAAAAAAAAgABMAAwAAAAAAAAAhABAAAwAAAAAAAAAhABEAAwAAAAAAAAAhABIAAwAAAAAAAAAhABMAAwAAAAAAAAAiABAAAwAAAAAAAAAiABEAAwAAAAAAAAAiABIAAwAAAAAAAAAiABMAAwAAAAAAAAAjABAAAwAAAAAAAAAjABEAAwAAAAAAAAAjABIAAwAAAAAAAAAjABMAAwAAAAAAAAAkABAAAwAAAAAAAAAkABEAAwAAAAAAAAAkABIAAwAAAAAAAAAkABMAAwAAAAAAAAAlABAAAwAAAAAAAAAlABEAAwAAAAAAAAAlABIAAwAAAAAAAAAlABMAAwAAAAAAAAAmABAAAwAAAAAAAAAmABEAAwAAAAAAAAAmABIAAwAAAAAAAAAmABMAAwAAAAAAAAAnABAAAwAAAAAAAAAnABEAAwAAAAAAAAAnABIAAwAAAAAAAAAnABMAAwAAAAAAAAAoABAAAwAAAAAAAAAoABEAAwAAAAAAAAAoABIAAwAAAAAAAAAoABMAAwAAAAAAAAApABAAAwAAAAAAAAApABEAAwAAAAAAAAApABIAAwAAAAAAAAApABMAAwAAAAAAAAAqABAAAwAAAAAAAAAqABEAAwAAAAAAAAAqABIAAwAAAAAAAAAqABMAAwAAAAAAAAArABAAAwAAAAAAAAArABEAAwAAAAAAAAArABIAAwAAAAAAAAArABMAAwAAAAAAAAAsABAAAwAAAAAAAAAsABEAAwAAAAAAAAAsABIAAwAAAAAAAAAsABMAAwAAAAAAAAAtABAAAwAAAAAAAAAtABEAAwAAAAAAAAAtABIAAwAAAAAAAAAtABMAAwAAAAAAAAAqAAgAAwAAAAAAAAAqAAkAAwAAAAAAAAAqAAoAAwAAAAAAAAAqAAsAAwAAAAAAAAAqAAwAAwAAAAAAAAAqAA0AAwAAAAAAAAAqAA4AAwAAAAAAAAAqAA8AAwAAAAAAAAArAAgAAwAAAAAAAAArAAkAAwAAAAAAAAArAAoAAwAAAAAAAAArAAsAAwAAAAAAAAArAAwAAwAAAAAAAAArAA0AAwAAAAAAAAArAA4AAwAAAAAAAAArAA8AAwAAAAAAAAAsAAgAAwAAAAAAAAAsAAkAAwAAAAAAAAAsAAoAAwAAAAAAAAAsAAsAAwAAAAAAAAAsAAwAAwAAAAAAAAAsAA0AAwAAAAAAAAAsAA4AAwAAAAAAAAAsAA8AAwAAAAAAAAAtAAgAAwAAAAAAAAAtAAkAAwAAAAAAAAAtAAoAAwAAAAAAAAAtAAsAAwAAAAAAAAAtAAwAAwAAAAAAAAAtAA0AAwAAAAAAAAAtAA4AAwAAAAAAAAAtAA8AAwAAAAAAAAAuAAgAAwAAAAAAAAAuAAkAAwAAAAAAAAAuAAoAAwAAAAAAAAAuAAsAAwAAAAAAAAAvAAgAAwAAAAAAAAAvAAkAAwAAAAAAAAAvAAoAAwAAAAAAAAAvAAsAAwAAAAAAAAAwAAgAAwAAAAAAAAAwAAkAAwAAAAAAAAAwAAoAAwAAAAAAAAAwAAsAAwAAAAAAAAAxAAgAAwAAAAAAAAAxAAkAAwAAAAAAAAAxAAoAAwAAAAAAAAAxAAsAAwAAAAAAAAAyAAgAAwAAAAAAAAAyAAkAAwAAAAAAAAAyAAoAAwAAAAAAAAAyAAsAAwAAAAAAAAAzAAgAAwAAAAAAAAAzAAkAAwAAAAAAAAAzAAoAAwAAAAAAAAAzAAsAAwAAAAAAAAA0AAgAAwAAAAAAAAA0AAkAAwAAAAAAAAA0AAoAAwAAAAAAAAA0AAsAAwAAAAAAAAA1AAgAAwAAAAAAAAA1AAkAAwAAAAAAAAA1AAoAAwAAAAAAAAA1AAsAAwAAAAAAAAA=")
+tile_set = ExtResource("9_eqiyx")

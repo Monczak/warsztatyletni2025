@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4lnfcwq72jy7"]
+[gd_scene load_steps=3 format=3 uid="uid://c4lnfcwq72jy7"]
 
 [ext_resource type="PackedScene" uid="uid://du36k4g5svai3" path="res://src/Level.tscn" id="1_8jqh8"]
+[ext_resource type="TileSet" uid="uid://dc0mgwxln31iq" path="res://src/tilesets/Terrain.tres" id="2_x0iqj"]
 
 [node name="Level" instance=ExtResource("1_8jqh8")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="0"]
+scale = Vector2(2, 2)
+tile_set = ExtResource("2_x0iqj")
