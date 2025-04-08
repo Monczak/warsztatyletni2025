@@ -10,4 +10,3 @@ func _ready() -> void:
 func _on_trigger_area_entered(body: Node2D) -> void:
     if body is Player:
         Game.handle_victory()
-

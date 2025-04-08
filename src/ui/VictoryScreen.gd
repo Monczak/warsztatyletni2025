@@ -29,5 +29,3 @@ func _on_victory() -> void:
 
 func _on_play_again_pressed() -> void:
     Game.reset_game()
-
-

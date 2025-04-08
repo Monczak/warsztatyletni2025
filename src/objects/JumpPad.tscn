@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b55tg1lipk3m5"]
 
-[ext_resource type="Script" path="res://src/scripts/JumpPad.gd" id="1_yal5c"]
+[ext_resource type="Script" uid="uid://bok1ug0lde0ng" path="res://src/scripts/JumpPad.gd" id="1_yal5c"]
 [ext_resource type="Texture2D" uid="uid://dfkgv3y8k2kfn" path="res://images/jumppad.png" id="2_gv8v1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7eems"]

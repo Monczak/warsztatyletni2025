@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvvdubdlwy54"]
 
-[ext_resource type="Script" path="res://src/ui/VictoryScreen.gd" id="1_mf42d"]
+[ext_resource type="Script" uid="uid://hbll8m4kt6wd" path="res://src/ui/VictoryScreen.gd" id="1_mf42d"]
 
 [node name="VictoryScreen" type="PanelContainer"]
 auto_translate_mode = 1

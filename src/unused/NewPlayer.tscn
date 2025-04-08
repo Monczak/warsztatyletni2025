@@ -1,7 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ogahwypwonms"]
 
-[ext_resource type="Script" path="res://src/objects/Player.gd" id="1_edy8u"]
 [ext_resource type="Texture2D" uid="uid://cabwwfn2u5qlb" path="res://icon.svg" id="2_6sc25"]
+
+[sub_resource type="Resource" id="Resource_wkulv"]
+metadata/__load_path__ = "res://src/objects/Player.gd"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wh26c"]
 radius = 37.0
@@ -15,7 +17,7 @@ size = Vector2(40, 20)
 
 [node name="Player" type="RigidBody2D"]
 lock_rotation = true
-script = ExtResource("1_edy8u")
+script = SubResource("Resource_wkulv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.625, 0.625)

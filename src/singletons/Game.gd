@@ -60,4 +60,3 @@ func reset_game() -> void:
     
 func _ready() -> void:
     reset_game()
-

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpl8ff35757bq"]
 
-[ext_resource type="Script" path="res://src/Background.gd" id="1_gya2p"]
+[ext_resource type="Script" uid="uid://cp26uqdj1mg3c" path="res://src/Background.gd" id="1_gya2p"]
 [ext_resource type="Texture2D" uid="uid://c2wqu5e88abbt" path="res://images/Dirt.png" id="2_3q365"]
 
 [node name="Background" type="Node2D"]

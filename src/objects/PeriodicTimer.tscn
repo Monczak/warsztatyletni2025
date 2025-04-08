@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccmq77qe4la"]
 
-[ext_resource type="Script" path="res://src/scripts/PeriodicTimer.gd" id="1_51fg0"]
+[ext_resource type="Script" uid="uid://btdkx3ur5cu13" path="res://src/scripts/PeriodicTimer.gd" id="1_51fg0"]
 [ext_resource type="Texture2D" uid="uid://cp5obqgbnff6c" path="res://images/timer.png" id="2_r8n2j"]
 
 [node name="PeriodicTimer" type="Node2D"]

@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="WarsztatyLetni2024"
+config/name="WarsztatyLetni2025"
 run/main_scene="res://src/Root.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]

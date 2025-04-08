@@ -93,8 +93,8 @@ default_value = 6.0
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
-uniform float wave_squish = 6;
-uniform float wave_frequency = 6;
+uniform float wave_squish = 6.0;
+uniform float wave_frequency = 6.0;
 uniform float wave_quantization = 1.5;
 uniform float wave_amplitude = 0.01999999955297;
 uniform float wave_offset = -0.03999999910593;
