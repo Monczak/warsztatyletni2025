@@ -11,8 +11,8 @@ func _ready() -> void:
 
 
 func _on_trigger_area_entered(body: Node2D) -> void:
-    var local_down = Vector2.DOWN.rotated(rotation)
+    var local_up = Vector2.UP.rotated(rotation)
     if body is Player:
-        body.apply_impulse_velocity(local_down * jump_velocity)
+        body.apply_impulse_velocity(local_up * jump_velocity)
     elif body is PlayerInteractable:
-        body.fix_position(body.global_position, local_down * jump_velocity, true)
+        body.fix_position(body.global_position, local_up * jump_velocity, true)

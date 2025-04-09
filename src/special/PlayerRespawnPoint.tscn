@@ -3,5 +3,4 @@
 [ext_resource type="Script" uid="uid://d0dvjour4k6ag" path="res://src/special/PlayerRespawnPoint.gd" id="1_2p1fw"]
 
 [node name="PlayerRespawnPoint" type="Node2D"]
-position = Vector2(-63, 37)
 script = ExtResource("1_2p1fw")

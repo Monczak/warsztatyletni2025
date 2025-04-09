@@ -9,6 +9,7 @@ size = Vector2(64, 18)
 [node name="JumpPad" type="Node2D"]
 z_index = 5
 script = ExtResource("1_yal5c")
+jump_velocity = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)

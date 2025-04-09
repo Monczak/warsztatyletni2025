@@ -51,12 +51,16 @@ func _on_body_exited_interaction_area(body: Node2D) -> void:
     if body is PlayerInteractable:
         _player_interactables.erase(body)
 
-
-func _interact() -> void:
+func release_interactable() -> void:
     if _grabbed_interactable != null:
         _grabbed_interactable.unfix_position()
         _grabbed_interactable.off_interaction()
         _grabbed_interactable = null
+
+
+func _interact() -> void:
+    if _grabbed_interactable != null:
+        release_interactable()
     else:
         if len(_player_interactables) == 0:
             return
@@ -127,6 +131,11 @@ func _physics_process(delta: float) -> void:
         velocity.x = move_toward(velocity.x, 0, acceleration * delta)
 
     move_and_slide()
+    
+    for i in get_slide_collision_count():
+        var object := get_slide_collision(i).get_collider()
+        if is_instance_valid(_grabbed_interactable) and object is Gate and _grabbed_interactable is KeyObj:
+            _grabbed_interactable.handle_interaction(object)
 
 
 func apply_impulse_velocity(vel: Vector2) -> void:
@@ -136,4 +145,5 @@ func apply_impulse_velocity(vel: Vector2) -> void:
 
 func _on_death() -> void:
     print("I am dead")
+    release_interactable()
     Game.handle_player_death()

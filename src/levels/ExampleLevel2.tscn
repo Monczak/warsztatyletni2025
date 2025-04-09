@@ -10,17 +10,18 @@
 [ext_resource type="TileSet" uid="uid://dc0mgwxln31iq" path="res://src/tilesets/Terrain.tres" id="9_dlkx8"]
 [ext_resource type="PackedScene" uid="uid://b55tg1lipk3m5" path="res://src/objects/JumpPad.tscn" id="9_jydrd"]
 
-[sub_resource type="Resource" id="Resource_jrluv"]
+[sub_resource type="Resource" id="Resource_dlkx8"]
 script = ExtResource("4_ub38i")
 interactable = NodePath("../Gate")
 mode = 0
 trigger_mode = 2
+metadata/_custom_type_script = "uid://evbgt7yyvnc8"
 
 [node name="Level" instance=ExtResource("1_26ve0")]
 
 [node name="Key" parent="." index="0" instance=ExtResource("3_oq0h5")]
 position = Vector2(-896, 96)
-interactions = Array[ExtResource("4_ub38i")]([SubResource("Resource_jrluv")])
+interactions = Array[ExtResource("4_ub38i")]([SubResource("Resource_dlkx8")])
 
 [node name="Player" parent="." index="1" instance=ExtResource("4_h4qch")]
 position = Vector2(-128, 320)

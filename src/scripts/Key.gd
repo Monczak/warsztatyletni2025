@@ -9,7 +9,7 @@ func _ready() -> void:
     body_entered.connect(_on_body_entered)
     
     
-func _on_body_entered(body: Node2D) -> void:
+func handle_interaction(body: Node2D) -> void:
     if body is not ObjectInteractable:
         return
         
@@ -21,5 +21,9 @@ func _on_body_entered(body: Node2D) -> void:
                     interactable_obj.OnInteraction()
                 Interaction.InteractionMode.SetOff:
                     interactable_obj.OffInteraction()
+            queue_free()
             return
+            
+func _on_body_entered(body: Node2D) -> void:
+    handle_interaction(body)
     

@@ -11,7 +11,7 @@ height = 32.0
 size = Vector2(64, 64)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 6
+collision_mask = 2
 platform_on_leave = 1
 script = ExtResource("1_7ey65")
 max_speed = 400.0

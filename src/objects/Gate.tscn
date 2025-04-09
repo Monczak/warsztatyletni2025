@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxg270vntsouh"]
 
-[ext_resource type="Script" uid="uid://cs4yaoq8dbftu" path="res://src/scripts/MovingObject.gd" id="1_8dnqo"]
+[ext_resource type="Script" uid="uid://c222pbiiyicjw" path="res://src/scripts/Gate.gd" id="1_k3wo5"]
 [ext_resource type="Texture2D" uid="uid://du7pud3qmc5w0" path="res://images/Gate3.png" id="2_cinen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb168"]
@@ -10,7 +10,7 @@ size = Vector2(32, 128)
 z_index = 5
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_8dnqo")
+script = ExtResource("1_k3wo5")
 DestinationDelta = Vector2(0, -100)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
